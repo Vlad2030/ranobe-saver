@@ -1,0 +1,101 @@
+version: '3.8'
+
+services:
+  server: 
+    container_name: ${SERVER_CONTAINER_NAME}
+    build: ./main_worker
+    command: bash start.sh info
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+    networks:
+      - database-network
+      - app-network
+      - api_network
+    # deploy:
+    #   restart_policy:
+    #     condition: on-failure
+    #     delay: 5s
+    #     max_attempts: 3
+    #     window: 120
+    #   resources:
+    #     limits:
+    #       cpus: '1.00'
+    #       memory: 512M
+    #     reservations:
+    #       cpus: '1.00'
+    #       memory: 256M
+
+  bot:
+    container_name: ${TELEGRAM_CONTAINER_NAME}
+    build: ./telegram
+    command: python ./run.py
+    restart: always
+    ports:
+      - 8001:8001
+    depends_on:
+      - server
+    networks:
+      - app-network
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.50'
+    #       memory: 128M
+    #     reservations:
+    #       cpus: '0.25'
+    #       memory: 64M
+
+  database:
+    container_name: ${POSTGRES_CONTAINER_NAME}
+    image: postgres:15
+    env_file:
+      - .env
+    ports:
+      - ${POSTGRES_CONTAINER_PORT}
+    networks:
+      - database-network
+    volumes:
+      - postgres:/data/postgres
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.50'
+    #       memory: 128M
+    #     reservations:
+    #       cpus: '0.50'
+    #       memory: 64M 
+
+  pgadmin:
+      container_name: ${PGADMIN_CONTAINER_NAME}
+      image: dpage/pgadmin4
+      environment:
+        PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+        PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+        PGADMIN_CONFIG_SERVER_MODE: ${PGADMIN_CONFIG_SERVER_MODE}
+      volumes:
+        - pgadmin:/var/lib/pgadmin
+
+      ports:
+        - "${PGADMIN_PORT}:80"
+      networks:
+        - database-network
+      restart: unless-stopped
+
+networks:
+  database-network:
+    name: database-network
+    driver: bridge
+
+  app-network:
+    name: app-network
+    driver: bridge
+
+  api_network:
+    name: api_network
+    driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
