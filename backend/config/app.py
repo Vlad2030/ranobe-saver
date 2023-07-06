@@ -18,8 +18,8 @@ BACKEND_OPENAPI_PREFIX = ""
 
 # CORSMiddleware class
 BACKEND_ALLOW_ORIGINS = [
-    "http://localhost/",
-    "http://backend:8083/",
+#    "http://2.2.2.2/",
+#    "http://backend:8083/",
 ]
 BACKEND_ALLOW_ORIGIN_REGEX = None
 BACKEND_ALLOW_METHODS = [
