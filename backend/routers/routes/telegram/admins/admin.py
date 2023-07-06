@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 
 from core.crud.admins import Admins as CRUDAdmins
 from core.database import AsyncSession, get_async_session
-from schemas.responses.admins import Admin, Admins, AdminById, AdminCreated
+from schemas.responses.admins import Admin, Admins, AdminById, AdminCreated, AdminDeleted
 
 router = APIRouter(tags=["admins"])
 
@@ -60,6 +60,7 @@ async def add_admin(
 
 @router.delete(
     path="/",
+    response_model=AdminDeleted,
 )
 async def delete_admin(
         user_id: str,
