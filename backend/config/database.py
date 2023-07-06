@@ -1,0 +1,7 @@
+from utils.get_envs import Environs
+
+DATABASE_HOST = Environs.get("POSTGRES_CONTAINER_HOST")
+DATABASE_PORT = Environs.get("POSTGRES_CONTAINER_PORT")
+DATABASE_USER = Environs.get("POSTGRES_USER")
+DATABASE_PASSWORD = Environs.get("POSTGRES_PASSWORD")
+DATABASE_DB = Environs.get("POSTGRES_DB")
