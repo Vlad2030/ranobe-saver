@@ -60,6 +60,7 @@ async def add_user(
 
 @router.delete(
     path="/",
+    response_model=UserDeleted,
 )
 async def delete_user(
         user_id: str,
