@@ -37,7 +37,7 @@ class AdminById(BaseModel):
 
 
 class Admins(BaseModel):
-    count: int
+    count: int = 1
     admins: list[Admin]
 
     class Config:
