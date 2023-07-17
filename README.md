@@ -41,19 +41,23 @@ Service for download your best ranobes for free from ranobelib.me
 
 ## Stack
 ### Backend:
- - Python 3.10 (FastAPI, SQLAIchemy, Aiohttp)
- - Docker
 ![](https://img.shields.io/badge/Python-316192?style=for-the-badge&logo=python&logoColor=white&color=3776AB)
 ![](https://img.shields.io/badge/fastapi-316192?style=for-the-badge&logo=fastapi&logoColor=white&color=009688)
 ![](https://img.shields.io/badge/AIOHTTP-316192?style=for-the-badge&logo=aiohttp&logoColor=white&color=2C5BB4)
 ![](https://img.shields.io/badge/Docker-316192?style=for-the-badge&logo=docker&logoColor=white&color=2496ED)
 
-### Telegram Bot:
- - Python 3.10 (Aiogram 3.0, Aiohttp)
+ - Python 3.10 (FastAPI, SQLAIchemy, Aiohttp)
  - Docker
+
+
+### Telegram Bot:
 ![](https://img.shields.io/badge/Python-316192?style=for-the-badge&logo=python&logoColor=white&color=3776AB)
 ![](https://img.shields.io/badge/AIOHTTP-316192?style=for-the-badge&logo=aiohttp&logoColor=white&color=2C5BB4)
 ![](https://img.shields.io/badge/Docker-316192?style=for-the-badge&logo=docker&logoColor=white&color=2496ED)
+
+ - Python 3.10 (Aiogram 3.0, Aiohttp)
+ - Docker
+
 
 ## Dependencies
 ### Telegram bot:
