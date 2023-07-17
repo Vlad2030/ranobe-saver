@@ -137,7 +137,7 @@ Get users list
 *query parameters*
 ```json
 {
-    limit: (optional, default=50) 
+    "limit": 1 (optional, default=50) 
 }
 ```
 
@@ -190,3 +190,23 @@ Get user by id
 ```
 
 ---
+
+### `/telegram` endpoint
+
+#### **GET** /telegram/users/{user_id}/
+Get telegram user by user_id
+
+*response body*
+```json
+{
+    "user_id": "1840037832",
+    "username": "vladdd00",
+    "full_name": "влад",
+    "admin": true
+}
+```
+
+---
+
+### `/ranobes` endpoint
+> in development
