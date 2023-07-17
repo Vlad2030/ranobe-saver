@@ -132,6 +132,14 @@ User edit
 ---
 
 #### **GET** /users/
+Get users list
+
+*query parameters*
+```json
+{
+    limit: (optional, default=50) 
+}
+```
 
 *response body*
 ```json
@@ -153,6 +161,7 @@ User edit
 ---
 
 #### **GET** /users/count/
+Get users count
 
 *response body*
 ```json
@@ -165,6 +174,7 @@ User edit
 ---
 
 #### **GET** /users/{id}/
+Get user by id
 
 *response body*
 ```json
