@@ -1,5 +1,4 @@
-![Frame 3 (1)](https://github.com/Vlad2030/ranobe-saver/assets/61238982/ee830615-cd1d-49e1-bdda-1a91b04c6870)
-
+![](https://github.com/Vlad2030/ranobe-saver/assets/61238982/b92c9b12-f5cc-441d-8408-3021c7580318)
 
 # RanobeSaver
 
