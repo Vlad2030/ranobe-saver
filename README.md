@@ -6,7 +6,7 @@ Service for download your best ranobes for free from [ranobelib](https://ranobel
 
 ## Roadmap
  - [ ] Backend
-    - [ ] Create project arch
+    - [X] Create project arch
     - [ ] /users
         - [ ] Endpoints
         - [ ] CRUD
@@ -17,11 +17,11 @@ Service for download your best ranobes for free from [ranobelib](https://ranobel
         - [ ] CRUD
         - [ ] DB models
         - [ ] Schemas
-    - [ ] Docker
-        - [ ] Dockerfile
-    - [ ] .env
+    - [X] Docker
+        - [X] Dockerfile
+    - [X] .env
  - [ ] Telegram Bot
-    - [ ] Create project arch
+    - [X] Create project arch
     - [ ] Requests with backend
     - [ ] Celery broker
     - [ ] Message handlers
@@ -35,9 +35,9 @@ Service for download your best ranobes for free from [ranobelib](https://ranobel
     - [ ] Inline mode
     - [ ] Ad and news mailing
     - [ ] Ranobe events
-    - [ ] Docker
-        - [ ] Dockerfile
-    - [ ] .env
+    - [X] Docker
+        - [X] Dockerfile
+    - [X] .env
  - [ ] Docker-compose
  - [ ] Release MVP
 
