@@ -80,3 +80,101 @@ Service for download your best ranobes for free from ranobelib.me
  - python-dotenv==1.0.0
  - SQLAlchemy==2.0.9
  - uvicorn==0.21.1
+
+## Backend
+REST API docs
+
+### `/users` endpoint
+
+#### **POST** /users/
+Create a new user
+
+*request body*
+```json
+{
+    "user_id": "1840037832",
+    "username": "vladdd00",
+    "full_name": "влад",
+    "admin": true
+}
+```
+
+*response body*
+```json
+{
+    "created": true,
+}
+```
+
+---
+
+#### **PATCH** /users/{id}/
+User edit
+
+*request body*
+```json
+{
+    "admin": false (or null)
+}
+```
+
+> P.S. if the value is `null` it will not be changed
+
+
+*response body*
+```json
+{
+    "success": true,
+}
+```
+---
+
+#### **GET** /users/
+
+*response body*
+```json
+{
+    "users": [
+        {
+            "id": 1,
+            "telegram": {
+                "user_id": "1840037832",
+                "username": "vladdd00",
+                "full_name": "влад",
+            },
+            "admin": true
+        }
+    ]
+}
+```
+
+---
+
+#### **GET** /users/count/
+
+*response body*
+```json
+{
+    "count": 1,
+    "admin_count": 1
+}
+```
+
+---
+
+#### **GET** /users/{id}/
+
+*response body*
+```json
+{
+    "id": 1,
+    "telegram": {
+        "user_id": "1840037832",
+        "username": "vladdd00",
+        "full_name": "влад",
+    },
+    "admin": true
+}
+```
+
+---
